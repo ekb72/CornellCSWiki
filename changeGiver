@@ -1,0 +1,74 @@
+import java.util.Scanner;
+
+import java.text.DecimalFormat;
+
+
+
+/**
+ * 
+ */
+/**
+ * @author kimberlybomani
+ *
+ */
+
+public class changeGiver {
+	public static void main (String[]args) {
+		
+	}
+		Scanner reader = new Scanner (System.in);
+		getsChange co = new getsChange();
+		
+		
+		
+		double input_a = 0;
+		double input_b = 0;
+		boolean val = false; {
+		
+		while (val == false) {
+			System.out.println("type the price:") ; 
+			double input_a = reader.nextDouble();
+			
+			
+			System.out.println("type in the given amount:") ;
+			double input_b = reader.nextDouble();
+			
+			if (input_b<=input_a) {
+				System.out.println("\n Thank you.");
+				val=true;
+			}else if (input_a>input_b) {
+				System.out.println("\n Insufficient payment. Please try again.");
+			}
+			
+			
+		}
+		
+		//DecimalFormat  = new DecimalFormat ("$#0.00");
+		
+		double change = (input_a  - input_b);
+		
+		
+		
+		
+		
+		System.out.println("your change is " + change);
+		
+		System.out.println ("\n Number of quarters to give:" + co.quarters (change));
+		System.out.println ("\n Number of dime to give:" + co.dimes (change));
+		System.out.println ("\n Number of nickels to give:" + co.nickels (change));
+		System.out.println ("\n Number of pennies to give:" + co.pennies (change));
+		
+	 
+
+	 
+	
+		 
+	
+	while (change > 0) {
+		change = change % 10 + change /10;
+		System.out.println(change);
+		
+		break;
+	}
+		}
+}
