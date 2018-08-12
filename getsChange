@@ -1,0 +1,54 @@
+import java.text.DecimalFormat;
+
+public class getsChange {
+
+		
+		private final double a_quarter = .25;
+		private final double a_dime = .10;
+		private final double a_nickel = .05;
+		private final double a_penny = .01;
+		
+		DecimalFormat twoDForm = new DecimalFormat ("#.##");
+		
+		public int quarters (double change) {
+			change -= (int) change;
+			change /= a_quarter;
+			
+			return (int) change;
+		}
+				
+		public int dimes (double change) {
+			change -= (int) change;
+			change%= a_quarter;
+			change =
+	Double.valueOf(twoDForm.format(change));
+			change /= a_dime;
+			return (int) change;
+		}
+		public int nickels (double change) {
+			change -= (int) change;
+			change %= a_quarter;
+			change %= a_dime;
+			change=
+	Double.valueOf(twoDForm.format(change));
+			change /= a_nickel;
+			
+			return(int) change;
+		}
+		public int pennies (double change) {
+			change -= (int) change;
+			change %= a_quarter;
+			change %= a_dime;
+			change %= a_penny;
+			change=
+	Double.valueOf(twoDForm.format(change));
+			change /= a_penny;
+			
+			return(int) change;
+	}
+		
+	}
+			
+
+
+
